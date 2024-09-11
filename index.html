@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="rem_box_main">
+      <div class="rem_box_inner">
+        <div class="rem_box">
+          <h1>Lorem, ipsum <span>dolor sit</span> amet consectetur adipisicing.</h1>
+          <img
+            src="https://images.squarespace-cdn.com/content/v1/66d01ab1f469bb7a5392f7ce/9e97f067-4fc7-447b-9963-1eab32b63173/DSC04299.JPG?format=1500w"
+            alt=""
+          />
+        </div>
+        <div class="rem_box">
+          <h1>Lorem, ipsum dolor sit amet <span> adipisicing.</span></h1>
+          <img
+            src="https://images.squarespace-cdn.com/content/v1/66d01ab1f469bb7a5392f7ce/fdd246b1-403e-42c5-b390-0a254bd22511/DSC03501.JPG?format=1500w"
+            alt=""
+          />
+        </div>
+        <div class="rem_box">
+          <h1>Lorem, ipsum dolor sit amet consectetur adipisicing.</h1>
+          <img
+            src="https://images.squarespace-cdn.com/content/v1/66d01ab1f469bb7a5392f7ce/a38dc29b-b47d-44f4-afcf-3259e0527d23/DSC04521.jpg?format=1500w"
+            alt=""
+          />
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+ var box = document.querySelectorAll(".rem_box");
+//  var box_img = document.querySelectorAll(".rem_box img");
+      
+      box.forEach((box_run) => {
+          box_run.addEventListener("mouseenter", function(){
+            gsap.to(box_run.childNodes[3],{
+                opacity:1,
+                scale: 1
+            })
+            // box_run.childNodes[3].style.opacity='1'
+        });
+        box_run.addEventListener("mouseleave", function(){
+            gsap.to(box_run.childNodes[3],{
+                opacity:0,
+                scale: 0
+            })
+        });
+        box_run.addEventListener("mousemove", function(dats){
+            gsap.to(box_run.childNodes[3],{
+                x:dats.x - box_run.getBoundingClientRect().x - 110 ,
+                y:dats.y - box_run.getBoundingClientRect().y - 80
+            })
+        });
+      });
+
+     
+      
+    </script>
+  </body>
+</html>

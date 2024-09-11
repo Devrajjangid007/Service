@@ -1,0 +1,51 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@font-face {
+    font-family: "hel-light";
+    src: url("hel_light.woff2");
+  }
+  @font-face {
+    font-family: "hel-mid";
+    src: url("hel_mid.woff2");
+  }
+body{
+    /* font-family: hel-light; */
+    background-color: #0c0c0c;
+    color: #fff;
+    font-weight: 100;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-family: Neue Machina;
+    /* font-family: Neue Machina Light; */
+}
+.rem_box {
+    padding: 3vh 30px 5vh 30px;
+    border-bottom: 1px solid #ccc;
+    position: relative;
+}
+h1{
+    position: relative;
+    z-index: 1;
+    line-height: 0.845em;
+    font-size: 2.7em;
+    font-weight: 300 !important;
+}
+h1 span{
+    color: #24cfa6;
+}
+.rem_box img {
+    position: absolute;
+    opacity:0;
+    pointer-events: none;
+    scale: 0;
+    top: 0;
+    width: 200px;
+    height: 350px;
+    border-radius: 6px;
+    object-fit: cover;
+}
+
